@@ -1141,11 +1141,23 @@ noscript {
     font-weight: 500
 }
 
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 9999;
+    cursor: zoom-out;
+}
+
 .cta,
 .cta span,
 .cta svg,
 .project-box,
 footer {
+    margin-top: 25px;
     position: relative
 }
 
