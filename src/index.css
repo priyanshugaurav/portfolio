@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+
+*{
+    text-decoration: none;
+    list-style: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+/* Apply to entire page */
+::-webkit-scrollbar {
+  width: 8px;              /* Slim width */
+  height: 8px;             /* Horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.3); /* Thumb color */
+  border-radius: 10px;                  /* Rounded corners */
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.5); /* Darker on hover */
+}
+
+
+@keyframes slideText {
+  0%, 20% {
+    transform: translateY(0%);
+  }
+  25%, 45% {
+    transform: translateY(-24%);
+  }
+  50%, 70% {
+    transform: translateY(-48%);
+  }
+  75%, 95% {
+    transform: translateY(-72%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-slideText {
+  animation: slideText 10s ease-in-out infinite;
+}
+
+
+.profile{
+     /* font-family: "poppins"; */
+     font-weight: 600;
+     letter-spacing: 0px;
+}
+
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --border-color: #ebebeb;
+
+  /* Cover box + dots */
+  --cover-bg: #f9f9f9;
+  --cover-dot: #d4d4d4;
+
+  /* Icon styles light mode */
+  --icon-bg: #eeeaea;
+  --icon-color: #333;
+
+    --streak-strong: #216e39; /* dark green */
+  --streak-medium: #30a14e; /* medium green */
+  --streak-light: #9be9a8; 
+}
+
+[data-theme="dark"] {
+  --bg-color: #08080a;
+  --text-color: white;
+  --border-color: #333;
+
+  /* Dark mode cover */
+  --cover-bg: #0b0b0d;
+  --cover-dot: #202021;
+
+  /* Icon styles dark mode */
+  --icon-bg: #2f2f2f;
+  --icon-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #08080a;
+    --text-color: white;
+    --border-color: #333;
+
+    --cover-bg: #0b0b0d;
+    --cover-dot: #202021;
+
+    --icon-bg: #2f2f2f;
+    --icon-color: white;
+  }
+}
