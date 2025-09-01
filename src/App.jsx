@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import {
-  BrowserRouter,
+  HashRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import { HashRouter as Router } from "react-router-dom";
 
 
 import Header from './components/Header'

@@ -1,4 +1,6 @@
 // src/data/posts.js
+import { withBaseUrl } from "../utils/withBaseUrl";
+
 export const posts = [
   {
     id: 1,
@@ -24,7 +26,7 @@ export const posts = [
     date: "Aug 31",
     content: `Started working on a Slither.io remake 🐍\nThis time with better visuals, smooth gameplay, and a more professional look.`,
     image:
-      "projects/slither.png",
+      "https://cdn.dribbble.com/userupload/43779220/file/original-26a32680681c639008df8af78efdf35c.png?resize=1504x1128&vertical=center",
   },
   {
     id: 3,

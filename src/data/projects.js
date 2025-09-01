@@ -1,9 +1,11 @@
+import { withBaseUrl } from "../utils/withBaseUrl"
+
 export const projects = [
   {
     id: "portfolio-site",
     title: "Portfolio Website",
     description: "A modern responsive portfolio built with React.",
-    image: "/projects/portfollio1.png",
+    image: withBaseUrl("/projects/portfollio1.png"),
     link: "/",
     tech: ["React", "TailwindCSS", "Vite"],
     details: [
@@ -17,16 +19,16 @@ export const projects = [
       },
     ],
     gallery: [
-      "/projects/portfollio2.png",
-      "/projects/portfollio3.png",
-      "/projects/portfollio4.png",
+      withBaseUrl("/projects/portfollio2.png"),
+      withBaseUrl("/projects/portfollio3.png"),
+      withBaseUrl("/projects/portfollio4.png"),
     ]
   },
   {
     id: "shivanya-dealer",
     title: "Shivanya - Bajaj Auto Dealer Showroom",
     description: "A complete dealership management system built for Bajaj Auto showroom.",
-    image: "/projects/shivanya5.png",
+    image: withBaseUrl("/projects/shivanya5.png"),
     tech: ["React" , "Electronjs" , "Node.js" , "Express" , "MongoDB" , "Google Sheets API"],
     details: [
       {
@@ -47,10 +49,10 @@ export const projects = [
       }
     ],
     gallery: [
-      "/projects/shivanya1.png",
-      "/projects/shivanya2.png",
-      "/projects/shivanya3.png",
-      "/projects/shivanya4.png",
+      withBaseUrl("/projects/shivanya1.png"),
+      withBaseUrl("/projects/shivanya2.png"),
+      withBaseUrl("/projects/shivanya3.png"),
+      withBaseUrl("/projects/shivanya4.png"),
     ],
     
   }

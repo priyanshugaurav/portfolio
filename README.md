@@ -1,12 +1,41 @@
-# React + Vite
+# 🌐 Priyanshu Gaurav – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website built with **React + Vite + Tailwind CSS** and deployed on **GitHub Pages**.  
+It showcases my projects, blogs, and experiments in building cool stuff.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+- ⚡ **Fast & Modern** – Built with Vite for blazing speed.
+- 🎨 **TailwindCSS Styling** – Clean, responsive, and mobile-friendly.
+- 📂 **Projects Showcase** – Highlighting my best work with image galleries.
+- 📝 **Blog Section** – Sharing my learnings, experiments, and ideas.
+- 🔗 **Live Deployment** – Hosted on GitHub Pages at:
+  👉 [https://priyanshugrv.github.io/portfolio](https://priyanshugrv.github.io/portfolio)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- [React](https://react.dev/) – UI library  
+- [Vite](https://vitejs.dev/) – Next-gen frontend tooling  
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling  
+- [Lucide Icons](https://lucide.dev/) – Icons  
+- [GitHub Pages](https://pages.github.com/) – Hosting  
+
+---
+
+## 📸 Screenshots
+### Homepage  
+![Portfolio Homepage](./public/projects/portfollio1.png)
+
+### Project Details  
+![Project Details](./public/projects/portfollio2.png)
+
+---
+
+## 🚀 Setup & Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/priyanshugrv/portfolio.git
+   cd portfolio
