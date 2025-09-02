@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   HashRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-
 
 import Header from './components/Header'
 import Cover from './components/Cover'
@@ -22,11 +21,17 @@ import DinoGame from './components/DinoGame'
 import ProjectDetails from "./components/ProjectDetails";
 import BlogDetails from "./components/BlogDetails";
 
+import LoadingScreen from "./components/LoadingScreen";
+
 const App = () => {
   const noiseRef = useRef(null);
+  const [showLogoVideo, setShowLogoVideo] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // 🎞 Noise background
   useEffect(() => {
+    if (!noiseRef.current) return; // ✅ fix: only run if canvas exists
+
     const canvas = noiseRef.current;
     const ctx = canvas.getContext("2d");
 
@@ -62,82 +67,83 @@ const App = () => {
       cancelAnimationFrame(frame);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [loading]); // ✅ rerun only after loading screen finishes
 
   return (
     <Router>
-      {/* Noise overlay */}
-      <canvas
-        ref={noiseRef}
-        className="fixed inset-0 pointer-events-none z-[9999]"
-        style={{ opacity: 1 }}
-      />
-
-      {/* Common Header */}
-      <Header />
-
-      {/* Page Content */}
-      <section className="relative z-10 mt-10">
-        <Routes>
-          {/* Home */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Cover />
-                <Profile />
-                <Bio />
-                <Socials />
-                <About />
-                <Stack />
-                <Posts />
-                <Projects />
-                <StatsBridge />
-                <Blogs />
-                <DinoGame />
-                <Footer />
-              </>
-            }
+      {loading ? (
+        <LoadingScreen onFinish={() => setLoading(false)} />
+      ) : (
+        <>
+          {/* Noise overlay */}
+          <canvas
+            ref={noiseRef}
+            className="fixed inset-0 pointer-events-none z-[9999]"
+            style={{ opacity: 1 }}
           />
 
-          {/* Portfolio */}
-          <Route
-            path="/portfolio"
-            element={<>                <Cover />
-                <Profile />
-                <Bio />
-                <Socials />
-                <About />
-                <Stack />
-                <Posts />
-                <Projects />
-                <StatsBridge />
-                <Blogs />
-                <DinoGame />
-                <Footer /></>}
-          />
+          {/* Common Header */}
+          <Header showLogoVideo={showLogoVideo} />
 
-          {/* Blogs */}
-          <Route
-            path="/blogs"
-            element={<div className="mt-4"><Blogs/></div>}
-          />
-           <Route path="/blogs/:id" element={<BlogDetails />} />
+          {/* Page Content */}
+          <section className="relative z-10 mt-10">
+            <Routes>
+              {/* Home */}
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Cover setShowLogoVideo={setShowLogoVideo} />
+                    <Profile />
+                    <Bio />
+                    <Socials />
+                    <About />
+                    <Stack />
+                    <Posts />
+                    <Projects />
+                    <StatsBridge />
+                    <Blogs />
+                    <DinoGame />
+                    <Footer />
+                  </>
+                }
+              />
 
-          {/* Projects */}
-          <Route
-            path="/projects"
-            element={<div className="mt-4"><Projects/></div>}
-          />
-          <Route path="/projects/:id" element={<ProjectDetails />} />
+              {/* Portfolio */}
+              <Route
+                path="/portfolio"
+                element={
+                  <>
+                    <Cover setShowLogoVideo={setShowLogoVideo} />
+                    <Profile />
+                    <Bio />
+                    <Socials />
+                    <About />
+                    <Stack />
+                    <Posts />
+                    <Projects />
+                    <StatsBridge />
+                    <Blogs />
+                    <DinoGame />
+                    <Footer />
+                  </>
+                }
+              />
 
-          {/* Posts */}
-          <Route
-            path="/posts"
-            element={<div className="mt-4"><Posts/></div>}
-          />
-        </Routes>
-      </section>
+              {/* Blogs */}
+              <Route path="/blogs" element={<div className="mt-4"><Blogs /></div>} />
+              <Route path="/blogs/:id" element={<BlogDetails />} />
+
+              {/* Projects */}
+              <Route path="/projects" element={<div className="mt-4"><Projects /></div>} />
+              <Route path="/projects/:id" element={<ProjectDetails />} />
+
+              {/* Posts */}
+              <Route path="/posts" element={<div className="mt-4"><Posts /></div>} />
+            </Routes>
+          </section>
+        </>
+      )}
     </Router>
   );
 };

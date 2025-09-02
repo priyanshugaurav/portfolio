@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { createPortal } from "react-dom";
 
-const Header = () => {
+const Header = ({ showLogoVideo }) => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
@@ -24,71 +24,109 @@ const Header = () => {
         style={{ borderColor: "var(--border-color)" }}
         className="fixed top-0 left-0 w-full z-50 border-y-2 min-h-13 flex items-center justify-center backdrop-blur-lg bg-[var(--bg-color)]/70"
       >
-        {/* Desktop Menu */}
-        <div
-          style={{ borderColor: "var(--border-color)" }}
-          className="hidden md:flex border-l border-r min-h-13 min-w-[60.8vw] items-center justify-end gap-6 text-[15px] pr-5 ml-[-3px]"
-        >
-          <Link to="/portfolio" className="hover:text-blue-500 transition">
-            Portfolio
-          </Link>
-          <Link to="/blogs" className="hover:text-blue-500 transition">
-            Blog
-          </Link>
-          <Link to="/projects" className="hover:text-blue-500 transition">
-            Projects
-          </Link>
-          <Link to="/posts" className="hover:text-blue-500 transition">
-            Posts
-          </Link>
 
-          <li>
-            <button
-              style={{
-                backgroundColor: "var(--bg-color)",
-                border: `1px solid var(--border-color)`,
-              }}
-              className="p-2 rounded-full hover:opacity-80 transition-colors duration-300"
-            >
-              <Github
-                style={{ color: "var(--text-color)" }}
-                className="h-5 w-5"
-              />
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              style={{
-                backgroundColor: "var(--bg-color)",
-                border: `1px solid var(--border-color)`,
-              }}
-              className="p-2 rounded-full hover:opacity-80 transition-colors duration-300"
-            >
-              {darkMode ? (
-                <Sun
-                  style={{ color: "var(--text-color)" }}
-                  className="h-5 w-5"
-                />
-              ) : (
-                <Moon
-                  style={{ color: "var(--text-color)" }}
-                  className="h-5 w-5"
-                />
-              )}
-            </button>
-          </li>
-        </div>
+        
+        {/* Desktop Menu */}
+<div
+  style={{ borderColor: "var(--border-color)" }}
+  className="hidden md:flex border-l border-r min-h-13 min-w-[60.8vw] items-center justify-between gap-6 text-[15px] pr-5 ml-[-3px]"
+>
+  {/* Left side (Logo / Video) */}
+  <div className="flex items-center pl-5">
+    {showLogoVideo && (
+      <video
+        muted
+        playsInline
+        autoPlay
+        loop
+        className="h-10 w-10 rounded-full overflow-hidden"
+      >
+        <source src="logo.mp4" type="video/mp4" />
+      </video>
+    )}
+  </div>
+
+  {/* Right side (Links + Buttons) */}
+  <div className="flex items-center gap-6">
+    <Link to="/portfolio" className="hover:text-blue-500 transition">
+      Portfolio
+    </Link>
+    <Link to="/blogs" className="hover:text-blue-500 transition">
+      Blog
+    </Link>
+    <Link to="/projects" className="hover:text-blue-500 transition">
+      Projects
+    </Link>
+    <Link to="/posts" className="hover:text-blue-500 transition">
+      Posts
+    </Link>
+
+    <li>
+      <button
+        style={{
+          backgroundColor: "var(--bg-color)",
+          border: `1px solid var(--border-color)`,
+        }}
+        className="p-2 rounded-full hover:opacity-80 transition-colors duration-300"
+      >
+        <Github
+          style={{ color: "var(--text-color)" }}
+          className="h-5 w-5"
+        />
+      </button>
+    </li>
+    <li>
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        style={{
+          backgroundColor: "var(--bg-color)",
+          border: `1px solid var(--border-color)`,
+        }}
+        className="p-2 rounded-full hover:opacity-80 transition-colors duration-300"
+      >
+        {darkMode ? (
+          <Sun
+            style={{ color: "var(--text-color)" }}
+            className="h-5 w-5"
+          />
+        ) : (
+          <Moon
+            style={{ color: "var(--text-color)" }}
+            className="h-5 w-5"
+          />
+        )}
+      </button>
+    </li>
+  </div>
+</div>
+
 
         {/* Mobile Header */}
-        <div
-          style={{ borderColor: "var(--border-color)" }}
-          className="flex md:hidden w-full border-x-2 min-h-13 items-center justify-end mx-4 pr-4"
-        >
-          <button onClick={() => setMenuOpen(true)}>
-            <Menu style={{ color: "var(--text-color)" }} className="h-7 w-7" />
-          </button>
-        </div>
+   <div
+  style={{ borderColor: "var(--border-color)" }}
+  className="flex md:hidden w-full border-x-2 min-h-13 items-center justify-between mx-4 px-4 "
+>
+  {/* Left side (Logo / Video) */}
+  <div className="flex items-center">
+    {showLogoVideo && (
+      <video
+        muted
+        playsInline
+        autoPlay
+        loop
+        className="h-10 w-10 rounded-full overflow-hidden"
+      >
+        <source src="logo.mp4" type="video/mp4" />
+      </video>
+    )}
+  </div>
+
+  {/* Right side (Menu button) */}
+  <button onClick={() => setMenuOpen(true)}>
+    <Menu style={{ color: "var(--text-color)" }} className="h-7 w-7" />
+  </button>
+</div>
+
       </div>
 
       {/* Popup via Portal */}

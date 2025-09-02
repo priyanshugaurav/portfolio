@@ -1,30 +1,7 @@
 import { withBaseUrl } from "../utils/withBaseUrl"
 
 export const projects = [
-  {
-    id: "portfolio-site",
-    title: "Portfolio Website",
-    description: "A modern responsive portfolio built with React.",
-    image: withBaseUrl("/projects/portfollio1.png"),
-    link: "/",
-    tech: ["React", "TailwindCSS", "Vite"],
-    details: [
-      {
-        heading: "Overview",
-        content: "This project showcases my personal portfolio with animations and blog-style details."
-      },
-      {
-        heading: "Features",
-        content: "Dark mode, animations, blog section, project showcase, and contact form."
-      },
-    ],
-    gallery: [
-      withBaseUrl("/projects/portfollio2.png"),
-      withBaseUrl("/projects/portfollio3.png"),
-      withBaseUrl("/projects/portfollio4.png"),
-    ]
-  },
-  {
+   {
     id: "shivanya-dealer",
     title: "Shivanya - Bajaj Auto Dealer Showroom",
     description: "A complete dealership management system built for Bajaj Auto showroom.",
@@ -55,5 +32,28 @@ export const projects = [
       withBaseUrl("/projects/shivanya4.png"),
     ],
     
-  }
+  },
+  {
+    id: "portfolio-site",
+    title: "Portfolio Website",
+    description: "A modern responsive portfolio built with React.",
+    image: withBaseUrl("/projects/portfollio1.png"),
+    link: "/",
+    tech: ["React", "TailwindCSS", "Vite"],
+    details: [
+      {
+        heading: "Overview",
+        content: "This project showcases my personal portfolio with animations and blog-style details."
+      },
+      {
+        heading: "Features",
+        content: "Dark mode, animations, blog section, project showcase, and contact form."
+      },
+    ],
+    gallery: [
+      withBaseUrl("/projects/portfollio2.png"),
+      withBaseUrl("/projects/portfollio3.png"),
+      withBaseUrl("/projects/portfollio4.png"),
+    ]
+  },
 ];

@@ -1,53 +1,47 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
-const Cover = () => {
+const Cover = ({ setShowLogoVideo }) => {
   const videoRef = useRef(null);
-
-  const playVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
+  const coverRef = useRef(null);
 
   useEffect(() => {
-    // Scroll par bhi video play ho
-    const handleScroll = () => {
-      playVideo();
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowLogoVideo(!entry.isIntersecting); // if cover is not visible → show logo in header
+      },
+      { threshold: 0.1 } // fire when <10% visible
+    );
 
-    window.addEventListener("scroll", handleScroll);
+    if (coverRef.current) observer.observe(coverRef.current);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (coverRef.current) observer.unobserve(coverRef.current);
     };
-  }, []);
+  }, [setShowLogoVideo]);
 
   return (
     <div
+      ref={coverRef}
       style={{ borderColor: "var(--border-color)" }}
       className="relative border-b-2"
-      onMouseMove={playVideo} // PC hover ke liye
-      onTouchStart={playVideo} // Mobile tap ke liye
-      onClick={playVideo} // fallback
     >
       <div
         style={{
           borderColor: "var(--border-color)",
-          backgroundColor: "#ebebeb",
+          backgroundColor: "#161616",
           transition: "background-color 0.4s ease, background-image 0.4s ease",
         }}
-        className="
-          relative border-2 border-t-0 border-b-0
+        className="relative border-2 border-t-0 border-b-0
           flex items-center justify-center overflow-hidden
           mx-[4%] sm:mx-[10%] md:mx-[15%] lg:mx-[19.5%]
-          max-h-[20vh] sm:min-h-[30vh] md:min-h-[40vh] lg:min-h-[34vh]
-        "
+          max-h-[20vh] sm:min-h-[30vh] md:min-h-[40vh] lg:min-h-[34vh]"
       >
         {/* Video */}
-        <video ref={videoRef} muted playsInline>
+        <video ref={videoRef} muted playsInline autoPlay loop className="pt-17">
           <source src="cover.mp4" type="video/mp4" />
         </video>
 
-        {/* Dot Overlay */}
+        {/* Overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
