@@ -4,9 +4,18 @@ import { Link } from "react-router-dom";
 import { createPortal } from "react-dom";
 
 const Header = ({ showLogoVideo }) => {
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+   const getInitialTheme = () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      return savedTheme === "dark";
+    } else {
+      // Check system preference
+      return window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+  };
+
+  const [darkMode, setDarkMode] = useState(getInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -16,7 +25,6 @@ const Header = ({ showLogoVideo }) => {
     );
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
-
   return (
     <>
       {/* Header Bar */}

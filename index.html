@@ -23,6 +23,15 @@
   <meta property="og:description" content="Check out my portfolio, projects, and web development skills.">
   <meta property="og:url" content="https://priyanshugaurav.space">
   <meta property="og:type" content="website">
+  <script>
+  (function () {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = savedTheme ? savedTheme : (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+
 
   <title>Priyanshu Portfollio</title>
 </head>
