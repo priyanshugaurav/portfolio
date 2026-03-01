@@ -17,15 +17,15 @@ const Profile = () => {
           <div
             style={{ borderColor: 'var(--border-color)' }}
             className="
-              border-r relative flex items-center justify-center p-2
-              w-[36%] sm:w-auto sm:min-w-46 sm:max-w-46 sm:min-h-46 sm:max-h-46
+              border-r relative flex items-center justify-center pt-2
+              w-[36%] sm:w-auto sm:min-w-46 sm:max-w-46 sm:min-h-46 sm:max-h-46 overflow-hidden
             "
           >
             <img
               src="https://pbs.twimg.com/profile_images/1925208423529943040/tILDmOtW_400x400.jpg"
               alt="profile"
               style={{ borderColor: 'var(--border-color)' }}
-              className="rounded-full border-2 p-1 w-full aspect-square object-cover sm:h-46 sm:min-w-46"
+              className="rounded-full border-2 p-1 w-full aspect-square object-cover sm:h-46 sm:min-w-46 overflow-hidden"
             />
           </div>
 
@@ -50,7 +50,7 @@ const Profile = () => {
               style={{ borderColor: 'var(--border-color)' }}
               className="border-b-2 min-h-8 pl-4 text-xl sm:text-2xl font-bold flex items-center"
             >
-              Priyanshu
+              Priyanshu Gaurav
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -68,14 +68,13 @@ const Profile = () => {
             <div className="ml-5 pt-1 text-zinc-400 italic text-xs sm:text-sm font-light ">
               <span className="relative inline-block h-4 sm:h-6 overflow-hidden">
                 <span className="animate-slideText block">
-                  <span>Full-Stack Developer</span>
+                  <span>Full-Stack Software Engineer</span>
                   <br />
-                  <span>Low-level Programming Lover</span>
+                  <span>Building C++ JS Runtimes</span>
                   <br />
-                  <span>Exploring AI & ML</span>
+                  <span>Freelance Tech Consultant</span>
                   <br />
-                  <span>Always Learning and Building</span>
-
+                  <span>Crafting Modern Minimal UIs</span>
                   <br />
                 </span>
               </span>

@@ -2,13 +2,27 @@ import React from 'react';
 
 export default function QuotedPost({ quoted }) {
   return (
-    <div className="mt-4 p-4 border rounded-sm border-[#ebebeb] dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-      <div className="text-sm text-gray-500 dark:text-gray-400">{quoted.tag}</div>
-      <div className="font-semibold text-gray-800 dark:text-gray-200">{quoted.user}</div>
-      <div className="text-sm text-gray-400 dark:text-gray-500">
-        {quoted.handle} · {quoted.date}
+    <div 
+      className="mt-4 p-4 border-2 rounded-xl transition-colors duration-300 hover:opacity-90 cursor-pointer"
+      style={{
+        borderColor: 'var(--border-color)',
+        backgroundColor: 'var(--bg-color)' // Inherits the main background instead of a random gray
+      }}
+    >
+      <div className="flex items-center gap-2 mb-1">
+        <span className="font-bold text-sm">{quoted.user}</span>
+        <span className="text-sm opacity-60">{quoted.handle}</span>
+        <span className="text-sm opacity-40">·</span>
+        <span className="text-sm opacity-60">{quoted.date}</span>
       </div>
-      <div className="mt-2 whitespace-pre-line text-gray-700 dark:text-gray-300 text-[14.5px]">
+      
+      {quoted.tag && (
+        <div className="text-xs font-semibold opacity-50 uppercase tracking-wider mb-2">
+          {quoted.tag}
+        </div>
+      )}
+      
+      <div className="whitespace-pre-line text-[14.5px] leading-relaxed opacity-90">
         {quoted.content}
       </div>
     </div>

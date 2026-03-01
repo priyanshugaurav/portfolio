@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Code2,
-  Lightbulb,
+  Lightbulb, // Keeping all your original imports just in case
   MapPin,
   Phone,
   Mail,
@@ -29,13 +29,13 @@ const Bio = () => {
           "
         >
           {[
-            { icon: <Code2 size={14} />, text: 'Full-Stack Developer | Exploring AI & Emerging Tech' },
-            { icon: <Brain size={14} />, text: 'Exploring AI/ML & Low-level Programming' },
-            { icon: <MapPin size={14} />, text: '404' },
-            { icon: <Mail size={14} />, text: 'priyanshugaurav01@gmail.com' },
-            { icon: <Globe size={14} />, text: 'priyanshu.space' },
+            { icon: <Code2 size={14} />, text: 'Full-Stack Software Engineer & Freelance Consultant' },
+            { icon: <Brain size={14} />, text: 'Systems Engineering, C++ Runtimes & Modern Web' },
+            { icon: <MapPin size={14} />, text: 'Patna, Bihar, India' },
+            { icon: <Mail size={14} />, text: 'priyanshugaurav01@gmail.com', link: 'mailto:priyanshugaurav01@gmail.com' },
+            { icon: <Globe size={14} />, text: 'priyanshugaurav.space', link: 'https://priyanshugaurav.space' },
 
-          ].map(({ icon, text }, index) => (
+          ].map(({ icon, text, link }, index) => (
             <div
               key={index}
               className="flex items-center space-x-3 font-light text-sm sm:text-base"
@@ -56,7 +56,18 @@ const Bio = () => {
                 style={{ color: "var(--text-color)" }}
                 className="font-thin leading-6"
               >
-                {text}
+                {link ? (
+                  <a 
+                    href={link} 
+                    target={link.startsWith('http') ? "_blank" : "_self"} 
+                    rel="noopener noreferrer"
+                    className="hover:underline transition-all"
+                  >
+                    {text}
+                  </a>
+                ) : (
+                  text
+                )}
               </div>
             </div>
           ))}

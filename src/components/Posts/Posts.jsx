@@ -8,66 +8,68 @@ export default function Posts() {
 
   return (
     <div
-      className="border-b w-full"
+      className="w-full flex flex-col items-center transition-colors duration-400"
       style={{
         backgroundColor: "var(--bg-color)",
-        borderColor: "var(--border-color)",
         color: "var(--text-color)",
       }}
     >
-      {/* Header */}
+      {/* MAIN COLUMN WRAPPER */}
       <div
-        className="flex justify-center border-b"
+        className="w-full max-w-[90%] sm:max-w-[85%] md:max-w-[75%] lg:max-w-[61.5%] border-x-2 flex flex-col"
         style={{ borderColor: "var(--border-color)" }}
       >
+        {/* Header - Added justify-between to push the badge to the right */}
         <div
-          className="w-full max-w-[90%] sm:max-w-[85%] md:max-w-[75%] lg:max-w-[61.5%] border-x text-2xl sm:text-3xl font-semibold flex items-center px-4 sm:px-6 md:px-8 py-3"
+          className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-5 border-b-2 transition-colors duration-400"
           style={{ borderColor: "var(--border-color)" }}
         >
-          {/* Posts */}
-          Recents
-        </div>
-      </div>
+          <div className="text-2xl sm:text-3xl font-bold overflow-hidden">
+            Recents
+          </div>
 
-      {/* Post List */}
-      <div className="flex justify-center">
-        <div
-          className="w-full max-w-[90%] sm:max-w-[85%] md:max-w-[75%] lg:max-w-[61.5%] border-x"
-          style={{ borderColor: "var(--border-color)" }}
-        >
-          <PostList posts={postsToShow} />
-        </div>
-      </div>
-
-      {/* Show More Button */}
-      {visible < allPosts.length && (
-        <div className="flex justify-center mt-4 mb-6">
-          <button
-            onClick={() => setVisible(visible + 2)}
-            className="px-5 py-2 rounded transition border text-sm sm:text-base"
+          {/* Right-aligned Professional Badge with soft green dot */}
+          <div
+            className="flex items-center gap-2 px-3 py-1 border-2 text-[10px] sm:text-xs font-bold tracking-widest uppercase opacity-80"
             style={{
-              backgroundColor: "var(--text-color)",
-              color: "var(--bg-color)",
               borderColor: "var(--border-color)",
+              color: "var(--text-color)",
             }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor = "var(--border-color)")
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor = "var(--text-color)")
-            }
           >
-            Show More
-          </button>
+            {/* Soft pulsing green dot */}
+            <span
+              className="w-2 h-2 rounded-full animate-pulse"
+              style={{ backgroundColor: "var(--streak-medium)" }}
+            />
+            Active Log
+          </div>
         </div>
-      )}
 
-      {/* Divider */}
+        {/* Post List */}
+        <PostList posts={postsToShow} />
+
+        {/* Show More Button */}
+        {visible < allPosts.length && (
+          <div className="flex justify-center p-8 transition-colors duration-400">
+            <button
+              onClick={() => setVisible(visible + 3)}
+              className="px-8 py-3 border-2 text-[var(--text-color)] text-sm sm:text-base font-bold tracking-widest uppercase transition-all duration-300 hover:bg-[var(--text-color)] hover:text-[var(--bg-color)] active:scale-95"
+              style={{
+                borderColor: "var(--text-color)",
+              }}
+            >
+              Load More Updates
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Footer Divider */}
       <div
-        className="w-full min-h-10 border-y-2"
+        className="w-full min-h-12 border-y-2 transition-colors duration-400"
         style={{
           borderColor: "var(--border-color)",
-          backgroundImage: `repeating-linear-gradient(-45deg, var(--border-color) 0px, var(--border-color) 1px, transparent 1px, transparent 8px)`,
+          backgroundImage: `repeating-linear-gradient(-45deg, var(--cover-dot) 0px, var(--cover-dot) 1px, transparent 1px, transparent 8px)`,
         }}
       />
     </div>
