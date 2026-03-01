@@ -34,6 +34,18 @@ const Footer = () => {
   };
 
   return (
+
+    <>
+    <div
+        style={{
+          borderColor: 'var(--border-color)',
+          backgroundColor: 'var(--cover-bg)',
+          backgroundImage:
+            'repeating-linear-gradient(-45deg, var(--cover-dot) 0px, var(--cover-dot) 1px, transparent 1px, transparent 8px)',
+          transition: 'background-color 0.4s ease, background-image 0.4s ease',
+        }}
+        className="min-w-screen min-h-10 border-b-2"
+      ></div>
     <footer
       className="w-full flex flex-col items-center transition-colors duration-400"
       style={{
@@ -43,7 +55,7 @@ const Footer = () => {
     >
       {/* MAIN COLUMN WRAPPER */}
       <div
-        className="w-full max-w-[70%] sm:max-w-[85%] md:max-w-[70%] lg:max-w-[61.5%] border-x-2 flex flex-col items-center"
+        className="w-full max-w-[90%] sm:max-w-[85%] md:max-w-[70%] lg:max-w-[61.5%] border-x-2 flex flex-col items-center"
         style={{ borderColor: "var(--border-color)" }}
       >
         
@@ -140,6 +152,17 @@ const Footer = () => {
 
       </div>
     </footer>
+    <div
+        style={{
+          borderColor: 'var(--border-color)',
+          backgroundColor: 'var(--cover-bg)',
+          backgroundImage:
+            'repeating-linear-gradient(-45deg, var(--cover-dot) 0px, var(--cover-dot) 1px, transparent 1px, transparent 8px)',
+          transition: 'background-color 0.4s ease, background-image 0.4s ease',
+        }}
+        className="min-w-screen min-h-10 border-b-2"
+      ></div>
+    </>
   );
 };
 
