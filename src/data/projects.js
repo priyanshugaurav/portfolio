@@ -4,8 +4,9 @@ export const projects = [
   {
     id: "shivanya-dealer",
     title: "Shivanya - Bajaj Auto Dealer Showroom",
-    description: "A complete dealership management system built for Bajaj Auto showroom.",
+    description: "A complete dealership management system built for a real Bajaj Auto showroom, handling sales, stock, and customer ops.",
     image: withBaseUrl("/projects/shivanya5.png"),
+    link: "https://github.com/priyanshugaurav/shivanya",
     tech: ["React", "Electronjs", "Node.js", "Express", "MongoDB", "Google Sheets API"],
     details: [
       {
@@ -34,45 +35,45 @@ export const projects = [
   },
   {
     id: "zenith-js",
-    title: "Zenith-JS (NanoJS) Runtime",
-    description: "A custom JavaScript engine built from scratch in C++ featuring a recursive descent parser.",
-    image: withBaseUrl("/projects/nanojs-cover.png"), // Update with your actual image path
-    link: "https://github.com/yourusername/zenith-js", // Optional: link to repo
+    title: "NanoJS Runtime",
+    description: "A custom JavaScript runtime built from scratch in C++, with its own parser, AST evaluator, and event loop. Powers this portfolio in production.",
+    image: withBaseUrl("/projects/nanojs-cover.png"),
+    link: "https://github.com/priyanshugaurav/nanojs",
     tech: ["C++", "Compilers", "AST Parsing", "Systems Engineering"],
     details: [
       {
         heading: "Overview",
-        content: "To deeply understand how languages work under the hood, I built my own JavaScript engine from scratch. Reaching over 1,000 lines of C++, it evaluates JS code without relying on external browser engines."
+        content: "Built to understand how JavaScript actually executes. NanoJS is a working JS runtime written entirely in C++ with no reliance on V8 or any browser engine. It runs real JS code and even powers this portfolio in production."
       },
       {
         heading: "Technical Architecture",
-        content: "• Custom Lexer and Tokenizer\n• Recursive Descent Parser\n• Abstract Syntax Tree (AST) Evaluator\n• Manual Scope Chain & Memory Management\n• Basic support for async/await and Promises"
+        content: "Custom Lexer and Tokenizer, Recursive Descent Parser, Abstract Syntax Tree Evaluator, Manual Scope Chain and Memory Management, and basic async/await support."
       },
       {
         heading: "Impact",
-        content: "Building this provided a profound, low-level understanding of systems engineering, memory management, and the inner workings of production engines like V8."
+        content: "Gave me a deep, hands-on understanding of how parsers, evaluators, and event loops actually work at a systems level. The kind of thing no tutorial teaches."
       }
     ],
   },
   {
-    id: "maildev",
-    title: "MailDev Infrastructure",
-    description: "An API-first email delivery and infrastructure service modeled after Resend.",
-    image: withBaseUrl("/projects/maildev.png"), // Update with your actual image path
-    link: "https://github.com/priyanshugaurav/maildev", // Optional
-    tech: ["Node.js", "Express", "React", "AWS SES", "API Design"],
+    id: "orbitform",
+    title: "OrbitForm",
+    description: "A serverless form backend SaaS. Drop a URL in your form's action and we handle email delivery, spam filtering, webhooks and analytics. 160+ active users.",
+    image: withBaseUrl("/projects/maildev.png"),
+    link: "https://orbitform.space",
+    tech: ["Node.js", "Express", "React", "AWS SES", "PostgreSQL", "API Design"],
     details: [
       {
         heading: "Overview",
-        content: "MailDev is a scalable backend service designed to simplify transactional emails for developers. It abstracts complex cloud email infrastructure into a clean, developer-friendly REST API."
+        content: "OrbitForm lets developers connect HTML forms to a backend without writing any server code. Drop a single URL into your form's action attribute and get email delivery, spam protection, webhook support, and analytics out of the box."
       },
       {
         heading: "Features",
-        content: "• Custom API key generation and secure management\n• Core delivery logic wrapped around AWS Simple Email Service (SES)\n• Developer dashboard for tracking email delivery metrics\n• High-conversion, modern SaaS landing page"
+        content: "Serverless form submission handling, AWS SES for reliable email delivery, spam filtering and validation, webhook support, a developer dashboard for submission analytics, and a clean landing page at orbitform.space."
       },
       {
         heading: "Impact",
-        content: "Successfully architected a robust microservice that handles secure payload validation and cloud delivery, drastically reducing the boilerplate required to send automated emails."
+        content: "160+ active users since launch. Unlimited emails on the free tier with zero backend setup required. Built and maintained solo as a production SaaS."
       }
     ],
     gallery: [
@@ -82,22 +83,23 @@ export const projects = [
   },
   {
     id: "math-mock-engine",
-    title: "Math Mock Test Engine",
-    description: "An interactive educational platform that parses math equations into readable UI tests.",
-    image: withBaseUrl("/projects/math1.png"), // Update with your actual image path
-    tech: ["JavaScript", "React", "Algorithm Design", "Regex"],
+    title: "Mathematics Mock Test Engine",
+    description: "A mobile-first competitive exam prep platform with timed tests, live scoring and instant analytics. Crossed 1000 visits.",
+    image: withBaseUrl("/projects/math1.png"),
+    link: "https://github.com/priyanshugaurav/math-mock-engine",
+    tech: ["React Native", "Python", "JavaScript", "Algorithm Design", "Regex"],
     details: [
       {
         heading: "Overview",
-        content: "Built during my student days, this engine was designed to take raw 9th-grade mathematical equations and dynamically render them into a clean, interactive mock test interface."
+        content: "Built for students preparing for competitive exams. The engine parses math questions and renders them as clean, timed test sessions on mobile. Designed to be distraction-free and fast."
       },
       {
         heading: "Features",
-        content: "• Dynamic string parsing for complex mathematical notations\n• Automated scoring and feedback loops\n• Clean, distraction-free user interface designed for focus\n• State management for tracking user test progress"
+        content: "Timed exam sessions with auto-submit, state-managed scoring system with instant feedback, performance analytics after each session, and a mobile-first UI optimized for low-latency usage."
       },
       {
         heading: "Impact",
-        content: "This project served as a highly useful study tool while simultaneously sparking my initial passion for parsing algorithms and complex string manipulation."
+        content: "Crossed 1000 user visits. This was also the project that first got me interested in parsing algorithms and string manipulation, which eventually led to building NanoJS."
       }
     ],
     gallery: [

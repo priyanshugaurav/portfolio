@@ -22,7 +22,7 @@ const Profile = () => {
             "
           >
             <img
-              src="https://pbs.twimg.com/profile_images/1925208423529943040/tILDmOtW_400x400.jpg"
+              src="https://pbs.twimg.com/profile_images/2096511699386064896/vjZQhGQj_400x400.jpg"
               alt="profile"
               style={{ borderColor: 'var(--border-color)' }}
               className="rounded-full border-2 p-1 w-full aspect-square object-cover sm:h-46 sm:min-w-46 overflow-hidden"
