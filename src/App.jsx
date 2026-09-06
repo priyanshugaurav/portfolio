@@ -22,6 +22,7 @@ import ProjectDetails from "./components/ProjectDetails";
 import BlogDetails from "./components/BlogDetails";
 
 import LoadingScreen from "./components/LoadingScreen";
+import FloatingResume from "./components/FloatingResume";
 
 const App = () => {
   const noiseRef = useRef(null);
@@ -87,6 +88,7 @@ const App = () => {
 
           {/* Page Content */}
           <section className="relative z-10 mt-10">
+            <FloatingResume />
             <Routes>
               {/* Home */}
               <Route
