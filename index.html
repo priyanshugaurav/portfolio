@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -14,10 +14,10 @@
     <script>
       (function() {
         var s = localStorage.getItem('theme');
-        if (s === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
+        if (s === 'light') {
           document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
         }
       })();
     </script>

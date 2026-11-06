@@ -18,9 +18,11 @@ const NAV_ITEMS: NavItem[] = [
 export const Navbar: React.FC = () => {
   const [isDark, setIsDark] = useState(() => {
     if (typeof document !== "undefined") {
+      const stored = localStorage.getItem("theme");
+      if (stored === "light") return false;
       return document.documentElement.classList.contains("dark");
     }
-    return false;
+    return true;
   });
   const [activeId, setActiveId] = useState("hero");
   const [isResumeOpen, setIsResumeOpen] = useState(false);

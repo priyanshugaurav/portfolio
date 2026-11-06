@@ -4,10 +4,12 @@ import portfolioData from "../data/portfolioData.json";
 export const ContactSection: React.FC = () => {
   const { contact, social } = portfolioData;
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [feedback, setFeedback] = useState("");
   const [emailCopied, setEmailCopied] = useState(false);
 
   const directEmail = contact.email;
@@ -19,15 +21,49 @@ export const ContactSection: React.FC = () => {
     setTimeout(() => setEmailCopied(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setEmail("");
-      setSubject("");
-      setMessage("");
-      setSubmitted(false);
-    }, 3500);
+    setStatus("submitting");
+    setFeedback("");
+
+    const endpoint =
+      import.meta.env.VITE_CONTACT_ENDPOINT || "https://api.web3forms.com/submit";
+    const web3formsKey =
+      import.meta.env.VITE_WEB3FORMS_KEY || "4cfd9da7-29b7-4549-93b9-1b051d4f475a";
+
+    const formData = new FormData(e.currentTarget);
+    if (!formData.has("access_key")) {
+      formData.append("access_key", web3formsKey);
+    }
+    formData.append("from_name", name);
+    formData.append("subject", subject || "New Contact Message - priyanshugaurav.space");
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && (data?.success || data?.id || !data)) {
+        setStatus("success");
+        setFeedback("Message dispatched successfully! ✓");
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setFeedback(data?.message || "Failed to send message. Please email directly.");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch {
+      setStatus("error");
+      setFeedback("Network error. Please email directly at info@priyanshugaurav.space");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -149,8 +185,22 @@ export const ContactSection: React.FC = () => {
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
+                  {/* Anti-spam honeypot */}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full bg-white dark:bg-zinc-800/40 border border-zinc-200 dark:border-zinc-700/80 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-100 transition-colors shadow-2xs"
+                  />
+
                   <input
                     type="email"
+                    name="email"
                     placeholder="Your email address"
                     required
                     value={email}
@@ -160,6 +210,7 @@ export const ContactSection: React.FC = () => {
 
                   <input
                     type="text"
+                    name="subject"
                     placeholder="Subject (e.g. Full-Time Role, Project Inquiry)"
                     required
                     value={subject}
@@ -169,6 +220,7 @@ export const ContactSection: React.FC = () => {
 
                   <textarea
                     rows={3}
+                    name="message"
                     placeholder="Your message..."
                     required
                     value={message}
@@ -176,12 +228,48 @@ export const ContactSection: React.FC = () => {
                     className="w-full bg-white dark:bg-zinc-800/40 border border-zinc-200 dark:border-zinc-700/80 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-100 transition-colors shadow-2xs resize-none"
                   />
 
+                  {feedback && (
+                    <div
+                      className={`text-xs px-3 py-2 rounded-lg font-mono ${
+                        status === "success"
+                          ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
+                          : "bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20"
+                      }`}
+                    >
+                      {feedback}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-2.5 px-4 rounded-xl text-xs font-medium bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-black dark:hover:bg-white transition-all cursor-pointer shadow-xs flex items-center justify-center gap-1.5 group"
+                    disabled={status === "submitting"}
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-medium bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-black dark:hover:bg-white transition-all cursor-pointer shadow-xs flex items-center justify-center gap-1.5 group disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    <span>{submitted ? "Message Dispatched! ✓" : "Send Message"}</span>
-                    <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">→</span>
+                    {status === "submitting" ? (
+                      <>
+                        <svg
+                          className="animate-spin -ml-1 mr-1.5 h-3.5 w-3.5 text-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          />
+                        </svg>
+                        <span>Dispatching...</span>
+                      </>
+                    ) : status === "success" ? (
+                      <span className="font-semibold text-emerald-400 dark:text-emerald-600">Message Dispatched! ✓</span>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">→</span>
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
