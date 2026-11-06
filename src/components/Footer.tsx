@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="font-geist mt-16 sm:mt-20 border-t border-zinc-200 dark:border-zinc-800/40">
-      <div className="max-w-3xl mx-auto px-6 lg:px-0 py-6 sm:py-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0 py-6 sm:py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 font-geist-sans">
           <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
             <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">

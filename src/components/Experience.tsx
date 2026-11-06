@@ -7,7 +7,7 @@ export const Experience: React.FC = () => {
 
   return (
     <section id="experience" className="mt-16 sm:mt-20">
-      <div className="w-full max-w-3xl mx-auto px-6 lg:px-0">
+      <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         {/* Section Heading */}
         <div className="flex items-center justify-between gap-3 mb-4">
           <h2 className="text-xs text-zinc-500 dark:text-zinc-400 font-geist-sans uppercase tracking-[0.14em]">
@@ -19,7 +19,7 @@ export const Experience: React.FC = () => {
         </div>
 
         {/* Cohesive Bento Experience Box */}
-        <div className="p-5 sm:p-7 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80 font-geist-sans">
+        <div className="p-4 sm:p-6 md:p-7 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80 font-geist-sans">
           <div className="divide-y divide-zinc-200/60 dark:divide-zinc-800/60">
             {experience.map((job, idx) => (
               <div

@@ -64,25 +64,34 @@ export const Hero: React.FC = () => {
   };
 
   const renderBioWithBadge = (text: string) => {
-    const parts = text.split(
-      /(\[NanoJS\]\([^\)]+\)|Next\.js|React|Node\.js|TypeScript|NanoJS|CRM and ERP software|C\+\+|assembly)/g
-    );
+    // Match markdown links [text](url) or specific core keywords
+    const regex = /(\[([^\]]+)\]\(([^)]+)\)|Next\.js|React|Node\.js|TypeScript|CRM and ERP software|C\+\+|assembly)/g;
+    const elements: React.ReactNode[] = [];
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
 
-    return parts.map((part, i) => {
-      if (part === "NanoJS" || part.startsWith("[NanoJS]")) {
-        return (
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        elements.push(text.substring(lastIndex, match.index));
+      }
+
+      const fullMatch = match[0];
+      const linkText = match[2];
+      const linkUrl = match[3];
+
+      if (linkText && linkUrl) {
+        elements.push(
           <a
-            key={i}
-            href="https://github.com/priyanshugrv"
+            key={match.index}
+            href={linkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md font-mono text-[11.5px] font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30 hover:bg-amber-500/20 hover:border-amber-500/50 transition-all cursor-pointer align-baseline select-none shadow-2xs group"
-            title="NanoJS · Lightweight JS runtime & bytecode engine"
+            className="font-mono text-[13px] sm:text-[13.5px] font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 underline decoration-amber-500/50 hover:decoration-amber-500 underline-offset-[3px] transition-colors inline-flex items-center gap-0.5"
+            title={`${linkText} repository`}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse shrink-0" />
-            <span>NanoJS</span>
+            <span>{linkText}</span>
             <svg
-              className="w-2.5 h-2.5 text-amber-600 dark:text-amber-400 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              className="w-2.5 h-2.5 text-amber-600 dark:text-amber-400 shrink-0 inline opacity-85"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -95,70 +104,53 @@ export const Hero: React.FC = () => {
             </svg>
           </a>
         );
-      }
-
-      if (part === "CRM and ERP software") {
-        return (
-          <span
-            key={i}
-            className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md font-medium text-[12px] bg-indigo-500/10 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border border-indigo-500/25 dark:border-indigo-500/30 align-baseline select-none shadow-2xs"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0" />
-            <span>CRM and ERP software</span>
-          </span>
-        );
-      }
-
-      if (
-        part === "Next.js" ||
-        part === "React" ||
-        part === "Node.js" ||
-        part === "TypeScript"
+      } else if (
+        fullMatch === "Next.js" ||
+        fullMatch === "React" ||
+        fullMatch === "Node.js" ||
+        fullMatch === "TypeScript" ||
+        fullMatch === "C++" ||
+        fullMatch === "assembly"
       ) {
-        return (
+        elements.push(
           <span
-            key={i}
-            className="inline-flex items-center px-1.5 py-[1px] rounded-[5px] font-mono text-[11.5px] font-medium bg-zinc-100 dark:bg-zinc-800/90 text-zinc-900 dark:text-zinc-100 border border-zinc-200/90 dark:border-zinc-700/80 align-baseline select-none shadow-2xs hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
+            key={match.index}
+            className="font-mono text-[13px] sm:text-[13.5px] font-medium text-zinc-900 dark:text-zinc-100"
           >
-            {part}
+            {fullMatch}
           </span>
         );
-      }
-
-      if (part === "C++") {
-        return (
+      } else if (fullMatch === "CRM and ERP software") {
+        elements.push(
           <span
-            key={i}
-            className="inline-flex items-center px-1.5 py-[1px] rounded-[5px] font-mono text-[11.5px] font-medium bg-sky-500/10 dark:bg-sky-500/15 text-sky-800 dark:text-sky-300 border border-sky-500/25 dark:border-sky-500/30 align-baseline select-none shadow-2xs"
+            key={match.index}
+            className="font-medium text-zinc-900 dark:text-zinc-100"
           >
-            C++
+            {fullMatch}
           </span>
         );
+      } else {
+        elements.push(fullMatch);
       }
 
-      if (part === "assembly") {
-        return (
-          <span
-            key={i}
-            className="inline-flex items-center px-1.5 py-[1px] rounded-[5px] font-mono text-[11.5px] font-medium bg-purple-500/10 dark:bg-purple-500/15 text-purple-800 dark:text-purple-300 border border-purple-500/25 dark:border-purple-500/30 align-baseline select-none shadow-2xs"
-          >
-            assembly
-          </span>
-        );
-      }
+      lastIndex = regex.lastIndex;
+    }
 
-      return part;
-    });
+    if (lastIndex < text.length) {
+      elements.push(text.substring(lastIndex));
+    }
+
+    return elements;
   };
 
   return (
-    <section id="hero" className="pt-20 sm:pt-24 mb-6">
-      <div className="w-full max-w-3xl mx-auto px-6 lg:px-0">
+    <section id="hero" className="pt-18 sm:pt-24 mb-6">
+      <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         {/* Bento Hero Header Card */}
-        <div className="relative p-6 sm:p-7 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+        <div className="relative p-4 sm:p-6 md:p-7 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5">
             {/* Avatar + Main Details */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3.5 sm:gap-4">
               <div className="relative shrink-0 group">
                 <div className="absolute -inset-0.5 bg-gradient-to-tr from-amber-500/20 to-indigo-500/20 rounded-2xl blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img
@@ -166,18 +158,18 @@ export const Hero: React.FC = () => {
                   alt={personal.name}
                   width={68}
                   height={68}
-                  className="relative w-16 h-16 sm:w-[68px] sm:h-[68px] rounded-2xl object-cover border border-zinc-200 dark:border-zinc-800 shadow-xs transition-transform duration-300 group-hover:scale-[1.02]"
+                  className="relative w-14 h-14 sm:w-[68px] sm:h-[68px] rounded-2xl object-cover border border-zinc-200 dark:border-zinc-800 shadow-xs transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
 
               <div className="min-w-0">
                 <div className="flex items-center gap-2.5 flex-wrap">
-                  <h1 className="text-2xl sm:text-[28px] font-geist-sans font-semibold tracking-tight text-[#111111] dark:text-[#f2f2f2] leading-tight">
+                  <h1 className="text-xl sm:text-2xl md:text-[28px] font-geist-sans font-semibold tracking-tight text-[#111111] dark:text-[#f2f2f2] leading-tight">
                     {personal.name}
                   </h1>
                 </div>
 
-                <div className="flex items-center gap-2 mt-1.5 text-xs sm:text-sm">
+                <div className="flex items-center gap-2 mt-1 sm:mt-1.5 text-xs sm:text-sm">
                   <span className="font-geist-mono text-zinc-500 dark:text-zinc-400">role:</span>
                   <div className="h-6 flex items-center overflow-hidden">
                     <AnimatePresence mode="wait">
@@ -187,7 +179,7 @@ export const Hero: React.FC = () => {
                         animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
                         exit={{ filter: "blur(4px)", opacity: 0, y: -6 }}
                         transition={{ duration: 0.3 }}
-                        className="font-geist-mono font-medium text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-2 py-0.5 rounded-md text-[12px] inline-block hover:border-amber-500/40 hover:text-amber-500 transition-colors"
+                        className="font-geist-mono font-medium text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-2 py-0.5 rounded-md text-[11.5px] sm:text-[12px] inline-block hover:border-amber-500/40 hover:text-amber-500 transition-colors"
                       >
                         {roles[roleIndex]}
                       </motion.span>
@@ -200,7 +192,7 @@ export const Hero: React.FC = () => {
             {/* Availability Badge - Important Live Signal */}
             <div className="self-start sm:self-center">
               <Tooltip content={personal.availabilityTooltip} side="bottom">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700 shadow-xs select-none cursor-help hover:border-emerald-500/40 transition-colors">
+                <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700 shadow-xs select-none cursor-help hover:border-emerald-500/40 transition-colors">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -212,9 +204,9 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Editorial Metadata Rail (Clean, No-Truncation) */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6 mt-6 pt-5 border-t border-zinc-200/60 dark:border-zinc-800/60 text-xs sm:text-[13px]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-6 mt-5 pt-4 sm:pt-5 border-t border-zinc-200/60 dark:border-zinc-800/60 text-xs sm:text-[13px]">
             {/* Location & Time */}
-            <div className="flex items-center gap-2.5 text-zinc-600 dark:text-zinc-400 min-w-0">
+            <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 min-w-0">
               <svg
                 width="14"
                 height="14"
@@ -239,25 +231,27 @@ export const Hero: React.FC = () => {
             {/* Email with 1-Click Copy */}
             <button
               onClick={handleCopyEmail}
-              className="group flex items-center justify-start sm:justify-end gap-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors cursor-pointer text-left shrink-0"
+              className="group flex items-center justify-between sm:justify-end gap-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors cursor-pointer text-left shrink-0"
               title="Click to copy email"
             >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                className="text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors shrink-0"
-              >
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              <span className="font-mono text-xs sm:text-[12.5px] text-zinc-800 dark:text-zinc-200 group-hover:text-black dark:group-hover:text-white transition-colors">
-                {email}
-              </span>
-              <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-200/80 dark:border-zinc-700/80 text-zinc-600 dark:text-zinc-400 group-hover:border-zinc-400 dark:group-hover:border-zinc-500 transition-colors">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  className="text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors shrink-0"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span className="font-mono text-xs sm:text-[12.5px] text-zinc-800 dark:text-zinc-200 group-hover:text-black dark:group-hover:text-white transition-colors truncate max-w-[210px] sm:max-w-none">
+                  {email}
+                </span>
+              </div>
+              <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-200/80 dark:border-zinc-700/80 text-zinc-600 dark:text-zinc-400 group-hover:border-zinc-400 dark:group-hover:border-zinc-500 transition-colors shrink-0">
                 {copied ? "Copied! ✓" : "Copy"}
               </span>
             </button>
@@ -265,7 +259,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Bio Section - Clean Editorial Typography */}
-        <div className="mt-7 space-y-3">
+        <div className="mt-6 sm:mt-7 space-y-3">
           {personal.bioParagraphs.map((paragraph: string, idx: number) => {
             const isComment = paragraph.trim().startsWith("//");
             if (isComment) {
@@ -273,9 +267,9 @@ export const Hero: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="pt-1 flex items-start gap-2 font-mono text-[12.5px] sm:text-[13px] text-emerald-600/90 dark:text-emerald-400/90 leading-relaxed tracking-tight select-text"
+                  className="pt-1.5 flex items-start gap-2 font-mono text-[12px] sm:text-[13px] text-emerald-600 dark:text-emerald-400 leading-relaxed tracking-tight select-text"
                 >
-                  <span className="font-semibold text-emerald-500/80 dark:text-emerald-400/80 shrink-0 select-none">
+                  <span className="font-semibold text-emerald-500 shrink-0 select-none">
                     //
                   </span>
                   <span className="italic">
@@ -288,7 +282,7 @@ export const Hero: React.FC = () => {
             return (
               <p
                 key={idx}
-                className="text-[#555555] dark:text-[#b2b2b2] font-geist-sans font-[450] leading-[1.85] text-[14px] sm:text-[15px]"
+                className="text-zinc-600 dark:text-zinc-300 font-geist-sans font-normal leading-[1.75] sm:leading-[1.85] text-[14px] sm:text-[15px]"
               >
                 {renderBioWithBadge(paragraph)}
               </p>

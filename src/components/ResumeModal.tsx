@@ -43,7 +43,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-2xl bg-white dark:bg-[#0c0c0e] text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800 shadow-2xl transition-all font-geist-sans"
       >
         {/* Sticky Action Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between px-5 sm:px-7 py-3.5 bg-white/90 dark:bg-[#0c0c0e]/90 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80">
+        <div className="sticky top-0 z-10 flex items-center justify-between px-4 sm:px-7 py-3 sm:py-3.5 bg-white/90 dark:bg-[#0c0c0e]/90 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-xs font-geist-mono font-medium text-zinc-600 dark:text-zinc-400">
@@ -79,7 +79,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Resume Content Body */}
-        <div className="p-6 sm:p-9 space-y-7 printable-area">
+        <div className="p-4 sm:p-8 md:p-9 space-y-6 sm:space-y-7 printable-area">
           {/* Header Block */}
           <div className="border-b border-zinc-200 dark:border-zinc-800 pb-6">
             <h1 id="resume-title" className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">

@@ -403,7 +403,7 @@ export const CommitSnakeGame: React.FC = () => {
 
   return (
     <section ref={containerRef} id="commit-snake" className="mt-12 sm:mt-16">
-      <div className="w-full max-w-3xl mx-auto px-6 lg:px-0">
+      <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs overflow-hidden font-geist-sans transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80">
           {/* Header Bar */}
           <div className="px-4 py-3 sm:px-5 border-b border-zinc-200/70 dark:border-zinc-800/70 flex flex-wrap items-center justify-between gap-3 bg-zinc-100/50 dark:bg-zinc-900/50 text-xs">

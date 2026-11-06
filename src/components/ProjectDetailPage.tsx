@@ -66,7 +66,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
   if (!data) return null;
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-5 sm:px-6 lg:px-0 pt-20 sm:pt-24 pb-20 font-geist-sans animate-in fade-in duration-200">
+    <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-0 pt-18 sm:pt-24 pb-20 font-geist-sans animate-in fade-in duration-200">
       {/* =========================================================================
           TOP NAVIGATION BAR
           ========================================================================= */}

@@ -88,22 +88,22 @@ export const Navbar: React.FC = () => {
       />
 
       {/* Nav Content Container — Aligned to Portfolio max-w-3xl */}
-      <div className="relative w-full max-w-3xl mx-auto px-6 lg:px-0">
-        <div className="flex items-center justify-between h-16">
+      <div className="relative w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Left: Interactive 3D Brandmark + 3 Clean Typography Menus */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center gap-2.5 sm:gap-6">
             <NavIsometricMark />
 
             <div className="h-3.5 w-px bg-zinc-200 dark:bg-zinc-800" />
 
-            <div className="flex items-center gap-4 sm:gap-6">
+            <div className="flex items-center gap-3 sm:gap-6">
               {NAV_ITEMS.map((item) => {
                 const isActive = activeId === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => scrollTo(item.id)}
-                    className={`relative font-geist-sans text-sm tracking-tight transition-colors cursor-pointer py-1 after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-[1.5px] after:bg-current after:transition-all ${
+                    className={`relative font-geist-sans text-xs sm:text-sm tracking-tight transition-colors cursor-pointer py-1 after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-[1.5px] after:bg-current after:transition-all ${
                       isActive
                         ? "text-zinc-950 dark:text-white font-medium after:w-full"
                         : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 after:w-0 hover:after:w-full"
@@ -118,10 +118,10 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Right: Resume Button + Theme Toggle */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => setIsResumeOpen(true)}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium font-geist-sans border border-zinc-200/80 dark:border-zinc-800 bg-zinc-50/70 dark:bg-zinc-900/60 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-2xs"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-medium font-geist-sans border border-zinc-200/80 dark:border-zinc-800 bg-zinc-50/70 dark:bg-zinc-900/60 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-2xs"
               aria-label="View Resume / CV"
             >
               <span>Resume</span>
@@ -145,7 +145,7 @@ export const Navbar: React.FC = () => {
             <Tooltip content={isDark ? "Light mode" : "Dark mode"} side="bottom">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg cursor-pointer text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/40 transition-colors group"
+                className="p-1.5 sm:p-2 rounded-lg cursor-pointer text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/40 transition-colors group"
                 aria-label="Toggle theme"
               >
                 {isDark ? (

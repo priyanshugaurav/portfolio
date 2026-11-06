@@ -68,7 +68,7 @@ export const ContactSection: React.FC = () => {
 
   return (
     <section id="contact" className="mt-16 sm:mt-20">
-      <div className="w-full max-w-3xl mx-auto px-6 lg:px-0">
+      <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         {/* Section Header */}
         <div className="flex items-center justify-between gap-3 mb-4">
           <h2 className="text-xs text-zinc-500 dark:text-zinc-400 font-geist-sans uppercase tracking-[0.14em]">
@@ -80,7 +80,7 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* Cohesive Bento Card with Pixel-Perfect Symmetrical Alignment */}
-        <div className="rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80 p-6 sm:p-7 font-geist-sans">
+        <div className="rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80 p-4 sm:p-6 md:p-7 font-geist-sans">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
             {/* Left Column: Direct Channels & Status */}
             <div className="md:pr-8 flex flex-col justify-between">

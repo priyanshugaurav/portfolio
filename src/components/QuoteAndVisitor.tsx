@@ -6,7 +6,7 @@ export const QuoteAndVisitor: React.FC = () => {
 
   return (
     <section className="mt-10 sm:mt-12">
-      <div className="w-full max-w-3xl mx-auto px-6 lg:px-0">
+      <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="font-geist relative p-4 sm:p-5 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/25 backdrop-blur-sm shadow-xs transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80">
           <div className="relative flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
             {/* Quote block */}
