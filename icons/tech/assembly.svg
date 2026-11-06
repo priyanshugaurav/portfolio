@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="24" y="24" width="80" height="80" rx="16" fill="#18181b" stroke="#3f3f46" stroke-width="6"/>
+  <rect x="36" y="36" width="56" height="56" rx="8" fill="#27272a"/>
+  <!-- Pins Top -->
+  <path d="M40 10v14M64 10v14M88 10v14" stroke="#a1a1aa" stroke-width="5" stroke-linecap="round"/>
+  <!-- Pins Bottom -->
+  <path d="M40 104v14M64 104v14M88 104v14" stroke="#a1a1aa" stroke-width="5" stroke-linecap="round"/>
+  <!-- Pins Left -->
+  <path d="M10 40h14M10 64h14M10 88h14" stroke="#a1a1aa" stroke-width="5" stroke-linecap="round"/>
+  <!-- Pins Right -->
+  <path d="M104 40h14M104 64h14M104 88h14" stroke="#a1a1aa" stroke-width="5" stroke-linecap="round"/>
+  <!-- Center ASM Monogram -->
+  <text x="64" y="70" font-family="monospace" font-size="20" font-weight="bold" fill="#f4f4f5" text-anchor="middle" letter-spacing="1">ASM</text>
+</svg>
