@@ -1,0 +1,537 @@
+{
+  "personal": {
+    "name": "Priyanshu Gaurav",
+    "avatarUrl": "https://i.pinimg.com/736x/12/1f/bb/121fbb30a39c49b47bab7bf02c14eb5c.jpg",
+    "title": "Full-Stack Engineer & System Architect",
+    "roles": [
+      "Full-Stack Developer"
+    ],
+    "location": "Delhi, India",
+    "timezone": "Asia/Kolkata",
+    "timezoneLabel": "IST • UTC+5:30",
+    "email": "info@priyanshugaurav.space",
+    "availabilityStatus": "Available for work",
+    "availabilityTooltip": "Open to Full-Time & Founding Roles (Remote & Relocation)",
+    "bioParagraphs": [
+      "Full-stack developer who likes building things and figuring out how they work. I architect end-to-end applications with Next.js, React, Node.js, and TypeScript, build my own tools, and even made a JavaScript runtime called [NanoJS](https://github.com/priyanshugrv). I've also built and shipped CRM and ERP software for businesses, with hands-on experience spanning from modern web applications to lower-level programming in C++ and even assembly.",
+      "// I use AI to work faster, but I actually know how every function works under the hood. I was shipping sites long before the AI boom."
+    ]
+  },
+  "social": {
+    "github": "https://github.com/priyanshugrv",
+    "twitter": "https://x.com",
+    "linkedin": "https://linkedin.com/in/priyanshugrv",
+    "cal": "https://cal.com"
+  },
+  "currentFocus": {
+    "label": "Building",
+    "title": "NanoJS",
+    "detail": "Lightweight JS runtime & bytecode engine",
+    "url": "https://github.com/priyanshugrv"
+  },
+  "shippedLog": [
+    {
+      "version": "v0.4",
+      "project": "NanoJS",
+      "description": "Lightweight JavaScript runtime and bytecode interpreter built in C++",
+      "badge": "Personal Project",
+      "href": "https://github.com/priyanshugrv"
+    },
+    {
+      "version": "v1.2",
+      "project": "orbitform.space",
+      "description": "Clean dynamic form builder and webhook engine for quick lead capture",
+      "badge": "Personal Project",
+      "href": "https://orbitform.space"
+    },
+    {
+      "version": "v1.0",
+      "project": "RolePilot",
+      "description": "Autonomous AI agent pipeline for automated job discovery & tailored applications",
+      "badge": "Personal & SaaS",
+      "href": "https://github.com/priyanshugrv"
+    },
+    {
+      "version": "v1.1",
+      "project": "QuickSchema",
+      "description": "Client mockup tool for instant REST & GraphQL test endpoints",
+      "badge": "Freelance",
+      "href": "https://github.com/priyanshugrv"
+    }
+  ],
+  "techStack": [
+    {
+      "name": "C++",
+      "icon": "/icons/tech/cpp.svg",
+      "category": "systems"
+    },
+    {
+      "name": "Assembly",
+      "icon": "/icons/tech/assembly.svg",
+      "category": "systems"
+    },
+    {
+      "name": "Linux",
+      "icon": "/icons/tech/linux.svg",
+      "category": "systems"
+    },
+    {
+      "name": "Python",
+      "icon": "/icons/tech/python.svg",
+      "category": "systems"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "/icons/tech/typescript.svg",
+      "category": "fullstack"
+    },
+    {
+      "name": "React",
+      "icon": "/icons/tech/react.svg",
+      "category": "fullstack"
+    },
+    {
+      "name": "Next.js",
+      "icon": "/icons/tech/nextjs2-dark.svg",
+      "invertDark": false,
+      "category": "fullstack"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "/icons/tech/tailwindcss.svg",
+      "category": "fullstack"
+    },
+    {
+      "name": "Node.js",
+      "icon": "/icons/tech/nodejs.svg",
+      "category": "fullstack"
+    },
+    {
+      "name": "Express.js",
+      "icon": "/icons/tech/express.png",
+      "invertDark": true,
+      "category": "fullstack"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "/icons/tech/mongodb.svg",
+      "category": "tools"
+    },
+    {
+      "name": "MySQL",
+      "icon": "/icons/tech/mysql.svg",
+      "category": "tools"
+    },
+    {
+      "name": "Bun",
+      "icon": "/icons/tech/bun.svg",
+      "category": "tools"
+    },
+    {
+      "name": "Git",
+      "icon": "/icons/tech/git.svg",
+      "category": "tools"
+    },
+    {
+      "name": "GitHub",
+      "icon": "/icons/social/github.png",
+      "invertDark": true,
+      "category": "tools"
+    },
+    {
+      "name": "Cursor AI",
+      "icon": "/icons/tools/cursor-ai.png",
+      "category": "tools"
+    },
+    {
+      "name": "Figma",
+      "icon": "/icons/tech/figma.svg",
+      "category": "tools"
+    }
+  ],
+  "experience": [
+    {
+      "id": "independent-builder",
+      "company": "Independent / Builder",
+      "role": "Full-Stack & Systems Engineer",
+      "period": "2025 — Present",
+      "isCurrent": true,
+      "location": "Remote",
+      "url": "https://github.com/priyanshugrv",
+      "monogram": "I",
+      "description": "Building and shipping independent developer tools and web software, focusing on systems programming, custom runtimes, and lightweight SaaS backends.",
+      "bullets": [
+        "Architected and shipped OrbitForm, a headless form backend and webhook engine supporting instant lead collection without backend setup.",
+        "Built NanoJS from scratch in C++ to experiment with language internals, implementing custom lexing, parsing, and a stack-based bytecode virtual machine.",
+        "Prototyping automated job-search agents and developer utility micro-tools with Next.js, Node.js, and TypeScript."
+      ],
+      "techIcons": [
+        {
+          "name": "C++",
+          "icon": "/icons/tech/cpp.svg"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "/icons/tech/typescript.svg"
+        },
+        {
+          "name": "Next.js",
+          "icon": "/icons/tech/nextjs2-dark.svg"
+        },
+        {
+          "name": "Node.js",
+          "icon": "/icons/tech/nodejs.svg"
+        },
+        {
+          "name": "Linux",
+          "icon": "/icons/tech/linux.svg"
+        }
+      ]
+    },
+    {
+      "id": "freelance-erp",
+      "company": "Freelance / Contract",
+      "role": "Full-Stack Developer (CRM & ERP Systems)",
+      "period": "2023 — 2025",
+      "isCurrent": false,
+      "location": "Remote",
+      "url": "",
+      "monogram": "F",
+      "description": "Designed and shipped tailored CRM and ERP management software for business clients to streamline inventory, orders, and daily operations.",
+      "bullets": [
+        "Delivered full-stack ERP solutions with role-based access control (RBAC), multi-tenant data isolation, and live operational dashboards.",
+        "Built fast relational and document schemas to handle order pipelines, customer records, and invoice generation with automated PDF exports.",
+        "Worked directly with business stakeholders to iterate on UI workflows, eliminating manual spreadsheet bottlenecks."
+      ],
+      "techIcons": [
+        {
+          "name": "React",
+          "icon": "/icons/tech/react.svg"
+        },
+        {
+          "name": "Next.js",
+          "icon": "/icons/tech/nextjs2-dark.svg"
+        },
+        {
+          "name": "Node.js",
+          "icon": "/icons/tech/nodejs.svg"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "/icons/tech/mongodb.svg"
+        },
+        {
+          "name": "MySQL",
+          "icon": "/icons/tech/mysql.svg"
+        }
+      ]
+    }
+  ],
+  "featuredProjects": [
+    {
+      "id": "nanojs",
+      "title": "NanoJS",
+      "subtitle": "Lightweight JS Runtime & Bytecode Engine",
+      "badge": "Personal Project",
+      "liveUrl": "https://github.com/priyanshugrv",
+      "image": "/makedesign.png",
+      "summary": "A small JavaScript runtime and bytecode interpreter I built from scratch in C++ to really understand how JS runs under the hood. Handles lexing, parsing, and bytecode execution with quick startup.",
+      "metrics": [
+        {
+          "label": "Cold Start",
+          "value": "< 12ms",
+          "detail": "Instant bytecode VM execution"
+        },
+        {
+          "label": "Binary Size",
+          "value": "~280 KB",
+          "detail": "Zero external bloated dependencies"
+        }
+      ],
+      "stack": [
+        "C++",
+        "Linux",
+        "Git",
+        "Python"
+      ]
+    },
+    {
+      "id": "orbitform",
+      "title": "OrbitForm",
+      "subtitle": "Headless Form Backend & Webhook Engine",
+      "badge": "Personal Project",
+      "liveUrl": "https://orbitform.space",
+      "image": "/roast.png",
+      "summary": "A dead-simple form backend and lead capture tool. Just point any HTML form action to OrbitForm and you get instant spam protection, email alerts, and webhook triggers with zero backend code.",
+      "metrics": [
+        {
+          "label": "Setup Time",
+          "value": "< 2 min",
+          "detail": "Just drop the action endpoint"
+        },
+        {
+          "label": "Delivery",
+          "value": "99.9%",
+          "detail": "Reliable webhook and email dispatch"
+        }
+      ],
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS"
+      ]
+    }
+  ],
+  "quote": {
+    "text": "You miss 100% of the shots you don't take.",
+    "author": "Wayne Gretzky",
+    "visitorCount": "38,178"
+  },
+  "contact": {
+    "heading": "Get in Touch",
+    "description": "Open to full-time engineering roles, founding teams, and select projects.",
+    "email": "priyanshu.gaurav@dev.to",
+    "calUrl": "https://cal.com",
+    "status": "Open for Roles"
+  },
+  "resume": {
+    "fileName": "Priyanshu_Gaurav_Resume.pdf",
+    "name": "Priyanshu Gaurav",
+    "title": "Full-Stack Product Engineer & System Architect",
+    "location": "Jaipur, India",
+    "email": "priyanshu.gaurav@dev.to",
+    "github": "https://github.com/priyanshugrv",
+    "githubDisplay": "github.com/priyanshugrv",
+    "linkedin": "https://linkedin.com/in/priyanshugrv",
+    "linkedinDisplay": "linkedin.com/in/priyanshugrv",
+    "twitter": "https://x.com",
+    "twitterDisplay": "x.com/priyanshugrv",
+    "summary": "Full-stack product engineer with proven expertise architecting high-throughput distributed systems, real-time streaming architectures, and high-craft user interfaces. Experienced taking zero-to-one products to tens of thousands of active users with an obsession for performance, sub-second latency, and clean systems design.",
+    "highlights": [
+      "Engineered production platforms handling 40,000+ monthly active users with zero downtime.",
+      "Architected custom in-house CDN caching tier that cut external bandwidth expenses by ~80%.",
+      "Designed real-time streaming SSE pipeline with sub-300ms time-to-first-token for vector synthesis.",
+      "Shipped 12+ production releases and open-source packages in React, TypeScript, and Node."
+    ],
+    "experience": [
+      {
+        "role": "Full-Stack & Systems Engineer",
+        "company": "Independent / Builder",
+        "url": "https://github.com/priyanshugrv",
+        "period": "2025 — Present",
+        "location": "Remote · Systems Engineering, Web Tooling, SaaS",
+        "bullets": [
+          "Architected and shipped OrbitForm, a headless form backend and webhook engine supporting instant lead collection without backend setup.",
+          "Built NanoJS from scratch in C++ to experiment with language internals, implementing custom lexing, parsing, and a stack-based bytecode virtual machine.",
+          "Prototyping automated job-search agent pipelines and developer utility micro-tools with Next.js, Node.js, and TypeScript."
+        ]
+      },
+      {
+        "role": "Full-Stack Developer (CRM & ERP Systems)",
+        "company": "Freelance / Contract",
+        "url": "",
+        "period": "2023 — 2025",
+        "location": "Remote · Web Applications, Databases, Business Workflows",
+        "bullets": [
+          "Delivered full-stack ERP solutions with role-based access control (RBAC), multi-tenant data isolation, and live operational dashboards.",
+          "Built fast relational and document schemas to handle order pipelines, customer records, and invoice generation with automated PDF exports.",
+          "Worked directly with business stakeholders to iterate on UI workflows, eliminating manual spreadsheet bottlenecks."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "NanoJS",
+        "tag": "Lightweight JS Runtime & Bytecode Engine",
+        "stack": "C++ · Linux · Bytecode VM · Git",
+        "liveUrl": "https://github.com/priyanshugrv",
+        "githubUrl": "https://github.com/priyanshugrv",
+        "description": "Custom JavaScript runtime and bytecode interpreter built from scratch in C++ featuring a hand-rolled lexer, recursive descent parser, and stack-based virtual machine."
+      },
+      {
+        "name": "OrbitForm",
+        "tag": "Headless Form Backend & Webhook Engine",
+        "stack": "Next.js · TypeScript · Node.js · MongoDB",
+        "liveUrl": "https://orbitform.space",
+        "githubUrl": "https://github.com/priyanshugrv",
+        "description": "Minimalist form backend allowing any static website or landing page to collect submissions with automatic honeypot spam protection, instant email alerts, and webhook forwarding."
+      }
+    ],
+    "skills": {
+      "Frontend Engineering": "TypeScript, React, Next.js (App Router), Tailwind CSS, Framer Motion, HTML5, State Management (Zustand), Responsive UI",
+      "Backend & Distributed Systems": "Node.js, Express, WebSockets, Server-Sent Events (SSE), REST APIs, GraphQL, Nginx, Microservices Architecture",
+      "Databases & Cloud Infrastructure": "PostgreSQL, MongoDB, Redis, Docker, Cloudflare, AWS (S3, EC2), Git, Linux, CI/CD"
+    },
+    "education": {
+      "degree": "B.Tech in Computer Science & Engineering",
+      "institution": "Poornima College of Engineering",
+      "period": "2021 — 2025",
+      "grade": "8.8 CGPA",
+      "coursework": "Data Structures & Algorithms, Distributed Systems, Computer Networks, Operating Systems, Database Management Systems"
+    },
+    "availability": "Available for Full-Time & Founding Roles (Remote & Relocation)"
+  },
+  "caseStudies": {
+    "nanojs": {
+      "title": "NanoJS",
+      "tagline": "A lightweight JavaScript runtime and bytecode interpreter I built from scratch in C++ to see how JS actually works under the hood.",
+      "role": "Creator & Solo Developer",
+      "status": "Active Project",
+      "year": "2024 — Present",
+      "domain": "github.com/priyanshugrv",
+      "image": "/makedesign.png",
+      "githubUrl": "https://github.com/priyanshugrv",
+      "nextSlug": "orbitform",
+      "nextTitle": "OrbitForm",
+      "stats": [
+        {
+          "value": "< 12ms",
+          "label": "Cold Start",
+          "detail": "Instant bytecode VM execution",
+          "badge": "Fast"
+        },
+        {
+          "value": "~280 KB",
+          "label": "Binary Size",
+          "detail": "Zero bloated third-party dependencies",
+          "badge": "Lean"
+        },
+        {
+          "value": "100%",
+          "label": "Custom Engine",
+          "detail": "Hand-written lexer, parser, and stack VM",
+          "badge": "Core"
+        }
+      ],
+      "heading": "Why Build Another JavaScript Runtime?",
+      "problemText": "Most of us write JavaScript every single day, but huge runtimes like Node and V8 feel like black boxes full of complex C++ abstractions.",
+      "solutionText": "I wanted to understand everything from the ground up: how raw source text turns into tokens, how the AST is walked, how bytecode instructions get generated, and how a stack-based virtual machine evaluates them.",
+      "tags": [
+        "C++ Core",
+        "Stack-Based VM",
+        "Custom Bytecode",
+        "Zero Dependencies"
+      ],
+      "highlights": [
+        {
+          "title": "Hand-Rolled Lexer & Recursive Descent Parser",
+          "desc": "Tokenizes input and builds an abstract syntax tree without leaning on external parser generators like Lex or Yacc."
+        },
+        {
+          "title": "Bytecode Compiler & Virtual Machine",
+          "desc": "Flattens the AST into a compact bytecode stream and executes operations with a simple, high-speed stack VM."
+        },
+        {
+          "title": "Custom Object & Memory Model",
+          "desc": "Implements basic prototype lookups, numbers, strings, and closures with manual memory management."
+        }
+      ],
+      "steps": [
+        {
+          "num": "01",
+          "title": "Lexing & Tokenizing",
+          "desc": "Converts plain JS code strings into typed tokens while keeping line and column numbers for friendly errors."
+        },
+        {
+          "num": "02",
+          "title": "AST Compilation",
+          "desc": "Parses grammar rules, handles operator precedence, and spits out clean bytecode instructions."
+        },
+        {
+          "num": "03",
+          "title": "Stack VM Execution",
+          "desc": "The virtual machine runs the opcodes in a tight loop, managing call frames and the evaluation stack."
+        }
+      ],
+      "takeaway": "Building a runtime from scratch completely demystified language internals and made me a way sharper systems and full-stack programmer.",
+      "stack": [
+        "C++",
+        "Linux",
+        "Git",
+        "Python"
+      ]
+    },
+    "orbitform": {
+      "title": "OrbitForm",
+      "tagline": "A super clean form backend that gives any static website instant spam filtering, email notifications, and webhook forwarding with zero backend code.",
+      "role": "Creator & Full-Stack Developer",
+      "status": "Live Product",
+      "year": "2024 — Present",
+      "domain": "orbitform.space",
+      "image": "/roast.png",
+      "liveUrl": "https://orbitform.space",
+      "nextSlug": "nanojs",
+      "nextTitle": "NanoJS",
+      "stats": [
+        {
+          "value": "< 2 min",
+          "label": "Integration Time",
+          "detail": "Just plug in the form action URL",
+          "badge": "Simple"
+        },
+        {
+          "value": "99.9%",
+          "label": "Reliability",
+          "detail": "Guaranteed webhook delivery with automatic retries",
+          "badge": "Solid"
+        },
+        {
+          "value": "< 180ms",
+          "label": "Ingestion Latency",
+          "detail": "Quick response so submitters never wait",
+          "badge": "Snappy"
+        }
+      ],
+      "heading": "Stop Building Form Backends From Scratch",
+      "problemText": "Every time you build a landing page, portfolio, or client site, you have to write another API route, wire up an email service, set up spam checks, and deal with broken CORS headers.",
+      "solutionText": "OrbitForm solves this in one line: point your form's action attribute to your unique OrbitForm endpoint, and you get automatic honeypot bot blocking, clean email notifications, and webhooks that ping Slack or Discord instantly.",
+      "tags": [
+        "Zero Backend Code",
+        "Automatic Spam Shield",
+        "Webhook Forwarding",
+        "Instant Email Alerts"
+      ],
+      "highlights": [
+        {
+          "title": "Plug-and-Play Endpoints",
+          "desc": "Works with plain HTML, React, Next.js, Webflow, or Framer with zero SDKs or client libraries required."
+        },
+        {
+          "title": "Built-In Spam & Honeypot Filtering",
+          "desc": "Catches bot submissions invisibly without annoying real visitors with slow Captchas."
+        },
+        {
+          "title": "Instant Integrations & Webhooks",
+          "desc": "Forwards leads straight into Telegram, Discord, Slack, or any custom API with retry support."
+        }
+      ],
+      "steps": [
+        {
+          "num": "01",
+          "title": "Create Your Endpoint",
+          "desc": "Sign in and grab your unique form endpoint URL in about 10 seconds."
+        },
+        {
+          "num": "02",
+          "title": "Paste Into Your HTML",
+          "desc": "Set <form action=\"https://orbitform.space/f/...\" method=\"POST\"> on your site."
+        },
+        {
+          "num": "03",
+          "title": "Receive Submissions",
+          "desc": "Get notified immediately via email or webhook whenever someone fills out your form."
+        }
+      ],
+      "takeaway": "Built as a personal productivity tool to kill repetitive backend work, now helping developers launch landing pages much faster.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS"
+      ]
+    }
+  }
+}

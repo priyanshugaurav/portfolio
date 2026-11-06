@@ -1,41 +1,32 @@
-# 🌐 Priyanshu Gaurav – Portfolio
+# React + TypeScript + Vite
 
-This is my personal portfolio website built with **React + Vite + Tailwind CSS** and deployed on **GitHub Pages**.  
-It showcases my projects, blogs, and experiments in building cool stuff.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
----
+Currently, two official plugins are available:
 
-## ✨ Features
-- ⚡ **Fast & Modern** – Built with Vite for blazing speed.
-- 🎨 **TailwindCSS Styling** – Clean, responsive, and mobile-friendly.
-- 📂 **Projects Showcase** – Highlighting my best work with image galleries.
-- 📝 **Blog Section** – Sharing my learnings, experiments, and ideas.
-- 🔗 **Live Deployment** – Hosted on GitHub Pages at:
-  👉 [https://priyanshugrv.github.io/portfolio](https://priyanshugrv.github.io/portfolio)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
----
+## React Compiler
 
-## 🛠️ Tech Stack
-- [React](https://react.dev/) – UI library  
-- [Vite](https://vitejs.dev/) – Next-gen frontend tooling  
-- [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling  
-- [Lucide Icons](https://lucide.dev/) – Icons  
-- [GitHub Pages](https://pages.github.com/) – Hosting  
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
----
+## Expanding the Oxlint configuration
 
-## 📸 Screenshots
-### Homepage  
-![Portfolio Homepage](./public/projects/portfollio1.png)
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-### Project Details  
-![Project Details](./public/projects/portfollio2.png)
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
 
----
-
-## 🚀 Setup & Run Locally
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/priyanshugrv/portfolio.git
-   cd portfolio
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
